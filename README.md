@@ -1,4 +1,4 @@
 # **FurniChad**
 ## ~An AI Generated Furniture Tool
-<br>
-## ** Current Situation: **
+<br> </br>
+## **Current Situation:**
