@@ -18,3 +18,4 @@ One of the major such problems is limited customization options:- Online furnitu
   * Point2E
   + HuggingFace Diffusers
   - Flask
+  * Jupyter
