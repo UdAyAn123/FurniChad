@@ -30,7 +30,7 @@
         border-width: 2px;
         border-style: solid;
         border-color: grey;
-        width: 350px;
+        width: 26%;
         position: fixed;
         margin-left: 1110px;
         height: 725px;
@@ -81,24 +81,27 @@
     }
     
     .choose {
-        color: antiquewhite;
-        font-weight: bold;
+        color: white;
+        
+        font-family:sans-serif;
         font-size: 26px;
         margin-top: 20px;
     }
     
     .label {
-        color: antiquewhite;
-        font-weight: bold;
+        color: white;
+        font-family:sans-serif;
+      
         font-size: 26px;
         margin-top: 20px;
         cursor: pointer;
     }
     
     .hex {
-        color: antiquewhite;
+        color: white;
+        font-family:sans-serif;
         font-size: 18px;
-        font-weight: bold;
+        
         margin-top: 20px;
     }
     
@@ -250,7 +253,7 @@
     
     .info {
         color: white;
-        font-weight: bold;
+        font-family:Arial, Helvetica, sans-serif;
         font-size: 20px;
         margin-top: 5px;
     }
@@ -267,7 +270,7 @@
     
     .inputs {
         border-radius: 6px;
-        margin-left: 5pxremove
+        margin-left: 15px;
     }
     
     .another {
@@ -284,6 +287,20 @@
         border-radius: 6px;
         padding-left: 10px;
     }
+    .furnichad{
+        margin-top:10px;
+        border:0px;
+        height:510px;
+        width: 670px;
+        border-radius:5px;
+        box-shadow: 2px;
+    }
+    #jammu{
+        margin-top:0px;
+    }
+   .josh{
+    color:white;
+   }
 </style>
 
 <body>
@@ -297,9 +314,9 @@
         <div class="main2">
             <img src="logo-no-background.png" alt="error while loading image" class="img">
             <hr color="grey" class="hr">
-            <div class="chats"></div>
+            
             <div class="chatbox">
-                <div class="message"><input type="text" class="input" placeholder="Write your message here..."><span><button class="send">Send</button></span></div>
+                <iframe src="http://localhost:8502/" class="furnichad"></iframe>
             </div>
         </div>
         <div class="main3">
@@ -317,34 +334,12 @@
                 <div class="choose">Choose Colour: </div><input type="color" id="colorPicker" value="#6a5acd" class="code">
                 <div>
 
-                    <div class="hex">Hex Code:</div> <input type="text" id="box" class="code"><button onclick="copy()" class="another">Copy</button></div>
+                    <div class="hex">Hex Code:</div> <input type="text" id="box" class="code"></div>
             </div>
-
-            <div id="new" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption1" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption1('High Gloss')">High Gloss</div>
-                        <div class="option" onclick="selectOption1('Low Gloss')">Low Gloss</div>
-                        <div class="option" onclick="selectOption1('Textured')">Textured</div>
-                        <div class="option" onclick="selectOption1('Translucent')">Translucent</div>
-
-
-                    </div>
-
-                </div>
-            </div>
-
-
-
-
-
-
-
+<div class="jammu">
             <div class="dropdown" id="lki">
                 <label class="label">Choose Material:<br>
-                    <input list="browsers" name="myBrowser" class="abhi" id="material" placeholder="Material"/></label><button onclick="copy3()" class="another">Copy</button>
+                    <input list="browsers" name="myBrowser" class="abhi" id="material" placeholder="Material"/></label><button onclick="copy3()" class="another">Type</button>
                 <datalist id="browsers">
                       <option value="Plastic">
                       <option value="Glass">
@@ -360,7 +355,7 @@
             </div>
             <div class="dro" id="abc">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers1" name="myBrowser" class="abhi" id="material-1" placeholder="Material_Type"/></label><button onclick="c1()" class="another">Copy</button>
+                    <input list="browsers1" name="myBrowser" class="abhi" id="material-1" placeholder="Material_Type"/></label>
                 <datalist id="browsers1">
                       <option value="High gloss">
                       <option value="Low gloss">
@@ -371,7 +366,7 @@
             </div>
             <div class="dro" id="abc1">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers2" name="myBrowser" class="abhi" id="material-2" placeholder="Material_Type"/></label><button onclick="c2()" class="another">Copy</button>
+                    <input list="browsers2" name="myBrowser" class="abhi" id="material-2" placeholder="Material_Type"/></label>
                 <datalist id="browsers2">
                       <option value="Glossy">
                       <option value="Vague">
@@ -381,7 +376,7 @@
             </div>
             <div class="dro" id="abc2">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers3" name="myBrowser" class="abhi" id="material-3" placeholder="Material_Type"/></label><button onclick="c3()" class="another">Copy</button>
+                    <input list="browsers3" name="myBrowser" class="abhi" id="material-3" placeholder="Material_Type"/></label>
                 <datalist id="browsers3">
                       <option value="Steel">
                       <option value="Chrome">
@@ -392,7 +387,7 @@
             </div>
             <div class="dro" id="abc3">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers4" name="myBrowser" class="abhi" id="material-4" placeholder="Material_Type"/></label><button onclick="c4()" class="another">Copy</button>
+                    <input list="browsers4" name="myBrowser" class="abhi" id="material-4" placeholder="Material_Type"/></label>
                 <datalist id="browsers4">
                       <option value="Matt">
                       <option value="Gloss">
@@ -403,7 +398,7 @@
             </div>
             <div class="dro" id="abc4">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers5" name="myBrowser" class="abhi" id="material-5" placeholder="Material_Type"/></label><button onclick="c5()" class="another">Copy</button>
+                    <input list="browsers5" name="myBrowser" class="abhi" id="material-5" placeholder="Material_Type"/></label>
                 <datalist id="browsers5">
                       <option value="Cotton">
                       <option value="Wool">
@@ -412,7 +407,7 @@
             </div>
             <div class="dro" id="abc5">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers6" name="myBrowser" class="abhi" id="material-6" placeholder="Material_Type"/></label><button onclick="c6()" class="another">Copy</button>
+                    <input list="browsers6" name="myBrowser" class="abhi" id="material-6" placeholder="Material_Type"/></label>
                 <datalist id="browsers6">
                       <option value="Ash">
                       <option value="Birch">
@@ -426,7 +421,7 @@
             </div>
             <div class="dro" id="abc6">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers7" name="myBrowser" class="abhi" id="material-7" placeholder="Material_Type"/></label><button onclick="c7()" class="another">Copy</button>
+                    <input list="browsers7" name="myBrowser" class="abhi" id="material-7" placeholder="Material_Type"/></label>
                 <datalist id="browsers7">
                       <option value="White">
                       <option value="Jade">
@@ -439,7 +434,7 @@
             </div>
             <div class="dro" id="abc7">
                 <label class="label">Choose Material Type:<br>
-                    <input list="browsers8" name="myBrowser" class="abhi" id="material-8" placeholder="Material_Type"/></label><button onclick="c8()" class="another">Copy</button>
+                    <input list="browsers8" name="myBrowser" class="abhi" id="material-8" placeholder="Material_Type"/></label>
                 <datalist id="browsers8">
                       <option value="Slate">
                       <option value="Sandstone">
@@ -452,7 +447,7 @@
             </div>
             <div class="dropdown" id="lki">
                 <label class="label">Choose Design:<br>
-                    <input list="browser" name="myBrowser" class="abhi" id="design" placeholder="Design"/></label><button onclick="copy2()" class="another">Copy</button>
+                    <input list="browser" name="myBrowser" class="abhi" id="design" placeholder="Design"/></label>
                 <datalist id="browser">
                       <option value="Modern">
                       <option value="Coastal">
@@ -466,7 +461,8 @@
 
 
             </div>
-
+        </div>
+<div id="generate" class="josh"></div><button onclick="generate()">Generate</button>
         </div>
 
     </div>

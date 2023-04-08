@@ -312,3 +312,40 @@ function c8() {
     // Alert the copied text
 
 }
+console.log(500);
+
+function generate(){
+    var a= document.getElementById("box").value;
+    var b=document.getElementById("material").value;   
+    if(b=='Plastic'){
+        c=document.getElementById("material-1").value;
+    }else if(b=='Glass'){
+        c=document.getElementById("material-2").value;
+    }else if(b=='Metal'){
+        c=document.getElementById("material-3").value;
+    }else if(b=='Rubber'){
+        c=document.getElementById("material-4").value;
+    }else if(b=='Fabric'){
+        c=document.getElementById("material-5").value;
+    }else if(b=='Wood'){
+        c=document.getElementById("material-6").value;
+    }else if(b=='Marble'){
+        c=document.getElementById("material-7").value;
+    }else if(b=='Stone'){
+        c=document.getElementById("material-8").value;
+    }
+
+    console.log(c);
+    d=document.getElementById("design").value;
+    document.getElementById("generate").innerHTML =  b +' furniture of '+c+' material type with '+d+' design of colour code '+a;
+    console.log(document.getElementById("generate").value);
+    var copyText =document.getElementById("generate");
+    // Select the text field
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); // For mobile devices
+
+    // Copy the text inside the text field
+    navigator.clipboard.writeText(copyText);
+    alert("Your text is copied");
+
+}
