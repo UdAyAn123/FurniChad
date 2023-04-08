@@ -13,7 +13,7 @@ One of the major such problems is limited customization options:- Online furnitu
 </p>
 
 ## **Tech Stacks:**
-  -PyTorch
-  *Stable DreamFusion
-  +HuggingFace SD Model
-  -AutoCAD 
+  - PyTorch
+  * Stable DreamFusion
+  + HuggingFace SD Model
+  - AutoCAD 
