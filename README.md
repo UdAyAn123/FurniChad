@@ -14,6 +14,7 @@ One of the major such problems is limited customization options:- Online furnitu
 
 ## **Tech Stacks:**
   - PyTorch
-  * Stable DreamFusion
-  + HuggingFace SD Model
-  - AutoCAD 
+  - Stable Diffusion
+  * Point2E
+  + HuggingFace Diffusers
+  - Flask
