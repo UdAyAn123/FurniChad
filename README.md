@@ -11,3 +11,11 @@ One of the major such problems is limited customization options:- Online furnitu
 ## **Problem!**
 <p>The problem with online furniture shopping is that customers often face difficulties in finding the right furniture for their needs, due to a lack of expert guidance and limited customization options. Additionally, customers may struggle to visualize how the furniture will look in their space and have concerns about the quality and comfort of the product. These challenges can lead to dissatisfaction, returns, and negative customer experiences. A solution to these problems could be FurniChat, a virtual assistant that provides personalized advice, recommendations, and design inspiration to customers, helping them find the perfect furniture for their needs and ensuring a positive online shopping experience.
 </p>
+
+## **Tech Stacks:**
+<p>
+  *PyTorch
+  *Stable DreamFusion
+  *HuggingFace SD Model
+  *AutoCAD 
+</p>
