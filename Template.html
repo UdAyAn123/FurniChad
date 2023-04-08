@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>3D Image Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@3.8.0/dist/tf.min.js"></script>
+  </head>
+  <body>
+    <h1>3D Image Generator</h1>
+    <p>Enter a prompt and click "Generate" to create a 3D image:</p>
+    <input type="text" id="prompt">
+    <button onclick="generate()">Generate</button>
+    <div id="output"></div>
+    <script>
+      async function generate() {
+        const prompt = document.getElementById('prompt').value;
+        const outputDiv = document.getElementById('output');
+
+        // Clear previous output
+        outputDiv.innerHTML = '';
+
+        // Send prompt to Flask app
+        const response = await fetch('/generate', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: `prompt=${encodeURIComponent(prompt)}`
+        });
+
+        // Get generated image and display it
+        const image = await response.json();
+        const tensor = tf.tensor(image);
+        const dataUrl = await tf.browser.toDataURL(tensor);
+        const img = document.createElement('img');
+        img.src = dataUrl;
+        outputDiv.appendChild(img);
+      }
+    </script>
+  </body>
+</html>
