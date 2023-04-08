@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+</head>
+<style>
+    .main {
+        display: flex;
+        text-align: center;
+    }
+    
+    .main2 {
+        text-align: center;
+        margin-left: 360px;
+        width: 740px;
+    }
+    
+    .main3 {
+        background-color: black;
+        border-width: 2px;
+        border-style: solid;
+        border-color: grey;
+        width: 350px;
+        position: fixed;
+        margin-left: 1110px;
+        height: 725px;
+        text-align: center;
+        box-shadow: -2px 2px 5px grey;
+    }
+    
+    .main1 {
+        width: 350px;
+        border-width: 2px;
+        border-style: solid;
+        border-color: grey;
+        box-shadow: 2px 2px 5px grey;
+        position: fixed;
+        height: 725px;
+        background-color: black;
+    }
+    
+    .img {
+        height: 100px;
+        margin-top: 30px;
+        margin-left: -250px;
+        position: fixed;
+    }
+    
+    .line {
+        width: 85%;
+        margin-top: 60px;
+    }
+    
+    .dev {
+        font-size: 22px;
+        width: 130px;
+        border-radius: 6px;
+        text-align: center;
+        padding: 0px;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+    
+    .material {
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+    }
+    
+    #gap {
+        margin-top: 20px;
+    }
+    
+    .choose {
+        color: antiquewhite;
+        font-weight: bold;
+        font-size: 26px;
+        margin-top: 20px;
+    }
+    
+    .hex {
+        color: antiquewhite;
+        font-size: 18px;
+        font-weight: bold;
+        margin-top: 20px;
+    }
+    
+    .code {
+        margin-top: 10px;
+        cursor: pointer;
+    }
+    
+    #colorPicker {
+        border-radius: 6px;
+        border-width: 2px;
+    }
+    
+    #box {
+        text-align: center;
+        font-weight: bold;
+        margin-bottom: 30px;
+        border-radius: 4px;
+        font-size: 18px;
+    }
+    
+    .select {
+        color: antiquewhite;
+    }
+    
+    .option {
+        color: white;
+    }
+    
+    .selected-option {
+        color: antiquewhite;
+        font-size: 18px;
+    }
+    
+    .dropdown-content {
+        display: none;
+        z-index: 1;
+    }
+    
+    .selected-option {
+        margin-top: 10px;
+    }
+    
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+    
+    .select23 {
+        background-color: white;
+        color: black;
+        border-radius: 4px;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    
+    #lki {
+        margin-top: 30px;
+    }
+    
+    .new {
+        display: none;
+    }
+    
+    .hr {
+        margin-left: 40px;
+        width: 45%;
+        position: fixed;
+        margin-top: 150px;
+    }
+    
+    .chatbox {
+        position: fixed;
+        margin-left: 40px;
+        margin-top: 170px;
+        width: 45%;
+        border-width: 2px;
+        border-color: grey;
+        border-style: dashed;
+        height: 530px;
+        border-radius: 7px;
+    }
+    
+    .message {
+        position: fixed;
+        margin-top: 490px;
+        margin-left: 20px;
+    }
+    
+    .input {
+        width: 550px;
+        border-radius: 6px;
+        height: 20px;
+    }
+    
+    .send {
+        margin-left: 10px;
+        padding-left: 5px;
+        background-color: blue;
+        color: white;
+        zoom: 1.5;
+        border-radius: 4px;
+        border-width: 0px;
+        cursor: pointer;
+    }
+    
+    .logout {
+        color: Black;
+        font-weight: bold;
+        margin-top: 680px;
+        border-radius: 6px;
+        border-width: 0px;
+        font-size: 24px;
+        cursor: pointer;
+        transition: all 0.3s ease-in 0s;
+    }
+    
+    .logout:hover {
+        transform: scale(1.2);
+    }
+</style>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div class="main">
+        <div class="main1">
+            <button class="logout">Log Out</button>
+        </div>
+        <div class="main2">
+            <img src="logo-no-background.png" alt="error while loading image" class="img">
+            <hr color="grey" class="hr">
+
+            <div class="chatbox">
+                <div class="message"><input type="text" class="input" placeholder="Write your message here..."><span><button class="send">Send</button></span></div>
+            </div>
+        </div>
+        <div class="main3">
+            <hr color="grey" class="line">
+            <div>
+                <div class="choose">Choose Colour: </div><input type="color" id="colorPicker" value="#6a5acd" class="code">
+                <div>
+
+                    <div class="hex">Hex Code:</div> <input type="text" id="box" class="code"></div>
+            </div>
+            <div class="dropdown">
+                <span class="choose">Choose Material:</span>
+                <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption" placeholder="Materials" class="select23"></label></div>
+                <div class="dropdown-content">
+                    <div class="option" onclick="selectOption('Plastic')">Plastic</div>
+                    <div class="option" onclick="selectOption('Glass')">Glass</div>
+                    <div class="option" onclick="selectOption('Metal')">Metal</div>
+                    <div class="option" onclick="selectOption('Rubber')">Rubber</div>
+                    <div class="option" onclick="selectOption('Fabric')">Fabric</div>
+                    <div class="option" onclick="selectOption('Wood')">Wood</div>
+                    <div class="option" onclick="selectOption('Marble')">Marble</div>
+                    <div class="option" onclick="selectOption('Stone')">Stone</div>
+
+
+                </div>
+
+            </div>
+            <div id="new" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption1" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption1('High Gloss')">High Gloss</div>
+                        <div class="option" onclick="selectOption1('Low Gloss')">Low Gloss</div>
+                        <div class="option" onclick="selectOption1('Textured')">Textured</div>
+                        <div class="option" onclick="selectOption1('Translucent')">Translucent</div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="new1" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption3" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption3('Glossy')">Glossy</div>
+                        <div class="option" onclick="selectOption3('Vague')">Vague</div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="new2" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption4('Steel')">Steel</div>
+                        <div class="option" onclick="selectOption4('Chrome')">Chrome</div>
+                        <div class="option" onclick="selectOption4('Aluminium')">Aluminium</div>
+                        <div class="option" onclick="selectOption4('Bronze')">Bronze</div>
+                        <div class="option" onclick="selectOption4('Brass')">Brass</div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="new3" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption5('Matt')">Matt</div>
+                        <div class="option" onclick="selectOption5('Gloss')">Gloss</div>
+                        <div class="option" onclick="selectOption5('Textured')">Textured</div>
+                        <div class="option" onclick="selectOption5('Resin')">Resin</div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="new4" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption6('Cotton')">Cotton</div>
+                        <div class="option" onclick="selectOption6('Wool')">Wool</div>
+                        <div class="option" onclick="selectOption6('Leather')">Leather</div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="new5" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption7('Ash')">Ash</div>
+                        <div class="option" onclick="selectOption7('Birch')">Birch</div>
+                        <div class="option" onclick="selectOption7('Cherry')">Cherry</div>
+                        <div class="option" onclick="selectOption7('Mahogany')">Mahogany</div>
+                        <div class="option" onclick="selectOption7('Oak')">Oak</div>
+                        <div class="option" onclick="selectOption7('Pine')">Pine</div>
+                        <div class="option" onclick="selectOption7('Rosewood')">Rosewood</div>
+                        <div class="option" onclick="selectOption7('Wallnut')">Wallnut</div>
+
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="new6" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption8('White')">White</div>
+                        <div class="option" onclick="selectOption8('Jade')">Jade</div>
+                        <div class="option" onclick="selectOption8('Blue vein')">Blue vein</div>
+                        <div class="option" onclick="selectOption8('Green Vein')">Green Vein</div>
+                        <div class="option" onclick="selectOption8('Pink Vein')">Pink Vein</div>
+                        <div class="option" onclick="selectOption8('Dark')">Dark</div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div id="new7" class="new">
+                <div class="dropdown" id="lki">
+                    <span class="choose">Choose Material Type:</span>
+                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
+                    <div class="dropdown-content">
+                        <div class="option" onclick="selectOption9('Slate')">Slate</div>
+                        <div class="option" onclick="selectOption9('Sandstone')">Sandstone</div>
+                        <div class="option" onclick="selectOption9('Limestone')">Limestone</div>
+                        <div class="option" onclick="selectOption9('Ceramic')">Ceramic</div>
+                        <div class="option" onclick="selectOption9('Porcelain')">Porcelain</div>
+                        <div class="option" onclick="selectOption9('Bonechina')">Bonechina</div>
+
+                    </div>
+
+                </div>
+            </div>
+            <div class="dropdown" id="lki">
+                <span class="choose">Choose Design:</span>
+                <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption2" placeholder="Materials" class="select23"></label></div>
+                <div class="dropdown-content">
+                    <div class="option" onclick="selectOption2('Modern')">Modern</div>
+                    <div class="option" onclick="selectOption2('Coastal')">Coastal</div>
+                    <div class="option" onclick="selectOption2('Shabby')">Shabby</div>
+                    <div class="option" onclick="selectOption2('Retro')">Retro</div>
+                    <div class="option" onclick="selectOption2('Antique')">Antique</div>
+                    <div class="option" onclick="selectOption2('Rustic')">Rustic</div>
+                    <div class="option" onclick="selectOption2('Vintage')">Vintage</div>
+                    <div class="option" onclick="selectOption2('Mission')">Mission</div>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+        function myColor() {
+
+            // Get the value return by color picker
+            var color = document.getElementById('colorPicker').value;
+
+            // Set the color as background
+
+
+            // Take the hex code
+            document.getElementById('box').value = color;
+        }
+
+        // When user clicks over color picker,
+        // myColor() function is called
+        document.getElementById('colorPicker')
+            .addEventListener('input', myColor);
+
+        function selectOption(option) {
+            document.getElementById("selectedOption").innerHTML = option;
+            let opt = String(option);
+
+            if (opt == 'Plastic') {
+                document.getElementById("new").style.display = "block";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "hide";
+
+
+
+            } else if (opt == 'Glass') {
+                console.log(5);
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "block";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "hide";
+
+            } else if (opt == 'Metal') {
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "block";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "hide";
+
+
+            } else if (opt == 'Rubber') {
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "block";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "hide";
+
+
+            } else if (opt == 'Fabric') {
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "block";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "hide";
+
+
+            } else if (opt == 'Wood') {
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "block";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "hide";
+
+            } else if (opt == 'Marble') {
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "block";
+                document.getElementById("new7").style.display = "hide";
+
+
+            } else if (opt == 'Stone') {
+                document.getElementById("new").style.display = "hide";
+                document.getElementById("new1").style.display = "hide";
+                document.getElementById("new2").style.display = "hide";
+                document.getElementById("new3").style.display = "hide";
+                document.getElementById("new4").style.display = "hide";
+                document.getElementById("new5").style.display = "hide";
+                document.getElementById("new6").style.display = "hide";
+                document.getElementById("new7").style.display = "block";
+
+
+            }
+        }
+
+        function selectOption1(option) {
+            document.getElementById("selectedOption1").innerHTML = option;
+
+        }
+
+
+
+        function selectOption2(option) {
+            document.getElementById("selectedOption2").innerHTML = option;
+
+        }
+
+        function selectOption3(option) {
+            document.getElementById("selectedOption3").innerHTML = option;
+
+        }
+
+        function selectOption4(option) {
+            document.getElementById("selectedOption4").innerHTML = option;
+
+        }
+
+        function selectOption5(option) {
+            document.getElementById("selectedOption5").innerHTML = option;
+
+        }
+
+        function selectOption6(option) {
+            document.getElementById("selectedOption6").innerHTML = option;
+
+        }
+
+        function selectOption7(option) {
+            document.getElementById("selectedOption7").innerHTML = option;
+
+        }
+
+        function selectOption8(option) {
+            document.getElementById("selectedOption8").innerHTML = option;
+
+        }
+
+        function selectOption9(option) {
+            document.getElementById("selectedOption9").innerHTML = option;
+
+        }
+    </script>
+</body>
+<script type="module">
+
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyD5oPX-ScDnniWVeb28YhJQdq0RC017_iY",
+    authDomain: "hackfest-a71c4.firebaseapp.com", projectId: "hackfest-a71c4", storageBucket: "hackfest-a71c4.appspot.com", messagingSenderId: "226928990995", appId: "1:226928990995:web:645cf4645377b0f03818e6", measurementId: "G-PN39FBZ9HH" }; const app
+    = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
+</script>
+
+</html>
