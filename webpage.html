@@ -58,7 +58,7 @@
     
     .line {
         width: 85%;
-        margin-top: 60px;
+        margin-top: 10px;
     }
     
     .dev {
@@ -85,6 +85,14 @@
         font-weight: bold;
         font-size: 26px;
         margin-top: 20px;
+    }
+    
+    .label {
+        color: antiquewhite;
+        font-weight: bold;
+        font-size: 26px;
+        margin-top: 20px;
+        cursor: pointer;
     }
     
     .hex {
@@ -150,6 +158,11 @@
         margin-top: 30px;
     }
     
+    .dro {
+        margin-top: 30px;
+        display: none;
+    }
+    
     .new {
         display: none;
     }
@@ -210,6 +223,67 @@
     .logout:hover {
         transform: scale(1.2);
     }
+    
+    .chats {
+        position: absolute;
+        margin-left: 62px;
+        border-radius: 6px;
+        margin-top: 180px;
+        border-width: 2px;
+        border-style: solid;
+        height: 470px;
+        width: 620px;
+    }
+    
+    .image1 {
+        height: 80px;
+        margin-top: 10px;
+        margin-left: -120px;
+        border-radius: 10px;
+    }
+    
+    .fc {
+        position: fixed;
+        margin-top: 45px;
+        margin-left: 10px;
+    }
+    
+    .info {
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        margin-top: 5px;
+    }
+    
+    .final {
+        color: white;
+        background-color: blue;
+        font-weight: bold;
+        border: 0px;
+        margin-top: 10px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    .inputs {
+        border-radius: 6px;
+        margin-left: 5pxremove
+    }
+    
+    .another {
+        color: white;
+        background-color: blue;
+        cursor: pointer;
+        font-weight: bold;
+        border-width: 0px;
+        font-size: 16px;
+        margin-left: 5px;
+    }
+    
+    .abhi {
+        border-radius: 6px;
+        padding-left: 10px;
+    }
 </style>
 
 <body>
@@ -218,41 +292,34 @@
         <![endif]-->
     <div class="main">
         <div class="main1">
-            <button class="logout">Log Out</button>
+            <button class="logout" onclick="logout()">Log Out</button>
         </div>
         <div class="main2">
             <img src="logo-no-background.png" alt="error while loading image" class="img">
             <hr color="grey" class="hr">
-
+            <div class="chats"></div>
             <div class="chatbox">
                 <div class="message"><input type="text" class="input" placeholder="Write your message here..."><span><button class="send">Send</button></span></div>
             </div>
         </div>
         <div class="main3">
+            <form>
+                <img src="th.jpeg" alt="error while loading image" class="image1" id="myimg"><input type="file" id="photo" class="fc">
+                <div class="info">
+                    <div>Username:<input type="text" class="inputs" id="username" required></div>
+                    <div>Phone No.:<input type="text" class="inputs" id="phone" required></div>
+                    <div>Place:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" class="inputs" id="place" required></div>
+                </div>
+                <button class="final" onclick="uploadImage()" type="submit">All set!</button>
+            </form>
             <hr color="grey" class="line">
             <div>
                 <div class="choose">Choose Colour: </div><input type="color" id="colorPicker" value="#6a5acd" class="code">
                 <div>
 
-                    <div class="hex">Hex Code:</div> <input type="text" id="box" class="code"></div>
+                    <div class="hex">Hex Code:</div> <input type="text" id="box" class="code"><button onclick="copy()" class="another">Copy</button></div>
             </div>
-            <div class="dropdown">
-                <span class="choose">Choose Material:</span>
-                <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption" placeholder="Materials" class="select23"></label></div>
-                <div class="dropdown-content">
-                    <div class="option" onclick="selectOption('Plastic')">Plastic</div>
-                    <div class="option" onclick="selectOption('Glass')">Glass</div>
-                    <div class="option" onclick="selectOption('Metal')">Metal</div>
-                    <div class="option" onclick="selectOption('Rubber')">Rubber</div>
-                    <div class="option" onclick="selectOption('Fabric')">Fabric</div>
-                    <div class="option" onclick="selectOption('Wood')">Wood</div>
-                    <div class="option" onclick="selectOption('Marble')">Marble</div>
-                    <div class="option" onclick="selectOption('Stone')">Stone</div>
 
-
-                </div>
-
-            </div>
             <div id="new" class="new">
                 <div class="dropdown" id="lki">
                     <span class="choose">Choose Material Type:</span>
@@ -268,127 +335,138 @@
 
                 </div>
             </div>
-            <div id="new1" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption3" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption3('Glossy')">Glossy</div>
-                        <div class="option" onclick="selectOption3('Vague')">Vague</div>
 
-                    </div>
 
-                </div>
+
+
+
+
+
+            <div class="dropdown" id="lki">
+                <label class="label">Choose Material:<br>
+                    <input list="browsers" name="myBrowser" class="abhi" id="material" placeholder="Material"/></label><button onclick="copy3()" class="another">Copy</button>
+                <datalist id="browsers">
+                      <option value="Plastic">
+                      <option value="Glass">
+                      <option value="Metal">
+                      <option value="Rubber">
+                      <option value="Fabric">
+                      <option value="Wood">
+                        <option value="Marble">
+                            <option value="Stone">
+                    </datalist>
+
+
             </div>
-            <div id="new2" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption4('Steel')">Steel</div>
-                        <div class="option" onclick="selectOption4('Chrome')">Chrome</div>
-                        <div class="option" onclick="selectOption4('Aluminium')">Aluminium</div>
-                        <div class="option" onclick="selectOption4('Bronze')">Bronze</div>
-                        <div class="option" onclick="selectOption4('Brass')">Brass</div>
+            <div class="dro" id="abc">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers1" name="myBrowser" class="abhi" id="material-1" placeholder="Material_Type"/></label><button onclick="c1()" class="another">Copy</button>
+                <datalist id="browsers1">
+                      <option value="High gloss">
+                      <option value="Low gloss">
+                      <option value="Textured">
+                      <option value="Translucent">
 
-                    </div>
-
-                </div>
+                    </datalist>
             </div>
-            <div id="new3" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption5('Matt')">Matt</div>
-                        <div class="option" onclick="selectOption5('Gloss')">Gloss</div>
-                        <div class="option" onclick="selectOption5('Textured')">Textured</div>
-                        <div class="option" onclick="selectOption5('Resin')">Resin</div>
+            <div class="dro" id="abc1">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers2" name="myBrowser" class="abhi" id="material-2" placeholder="Material_Type"/></label><button onclick="c2()" class="another">Copy</button>
+                <datalist id="browsers2">
+                      <option value="Glossy">
+                      <option value="Vague">
+                      
 
-                    </div>
-
-                </div>
+                    </datalist>
             </div>
-            <div id="new4" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption6('Cotton')">Cotton</div>
-                        <div class="option" onclick="selectOption6('Wool')">Wool</div>
-                        <div class="option" onclick="selectOption6('Leather')">Leather</div>
-                    </div>
-
-                </div>
+            <div class="dro" id="abc2">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers3" name="myBrowser" class="abhi" id="material-3" placeholder="Material_Type"/></label><button onclick="c3()" class="another">Copy</button>
+                <datalist id="browsers3">
+                      <option value="Steel">
+                      <option value="Chrome">
+                        <option value="Aluminium">
+                            <option value="Bronze">
+                                <option value="Bras">
+                    </datalist>
             </div>
-            <div id="new5" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption7('Ash')">Ash</div>
-                        <div class="option" onclick="selectOption7('Birch')">Birch</div>
-                        <div class="option" onclick="selectOption7('Cherry')">Cherry</div>
-                        <div class="option" onclick="selectOption7('Mahogany')">Mahogany</div>
-                        <div class="option" onclick="selectOption7('Oak')">Oak</div>
-                        <div class="option" onclick="selectOption7('Pine')">Pine</div>
-                        <div class="option" onclick="selectOption7('Rosewood')">Rosewood</div>
-                        <div class="option" onclick="selectOption7('Wallnut')">Wallnut</div>
-
-
-                    </div>
-
-                </div>
+            <div class="dro" id="abc3">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers4" name="myBrowser" class="abhi" id="material-4" placeholder="Material_Type"/></label><button onclick="c4()" class="another">Copy</button>
+                <datalist id="browsers4">
+                      <option value="Matt">
+                      <option value="Gloss">
+                        <option value="Textured">
+                            <option value="Resin">
+                            
+                    </datalist>
             </div>
-            <div id="new6" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption8('White')">White</div>
-                        <div class="option" onclick="selectOption8('Jade')">Jade</div>
-                        <div class="option" onclick="selectOption8('Blue vein')">Blue vein</div>
-                        <div class="option" onclick="selectOption8('Green Vein')">Green Vein</div>
-                        <div class="option" onclick="selectOption8('Pink Vein')">Pink Vein</div>
-                        <div class="option" onclick="selectOption8('Dark')">Dark</div>
-
-                    </div>
-
-                </div>
+            <div class="dro" id="abc4">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers5" name="myBrowser" class="abhi" id="material-5" placeholder="Material_Type"/></label><button onclick="c5()" class="another">Copy</button>
+                <datalist id="browsers5">
+                      <option value="Cotton">
+                      <option value="Wool">
+                        <option value="Leather">
+                    </datalist>
             </div>
-            <div id="new7" class="new">
-                <div class="dropdown" id="lki">
-                    <span class="choose">Choose Material Type:</span>
-                    <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption4" placeholder="Materials" class="select23"></label></div>
-                    <div class="dropdown-content">
-                        <div class="option" onclick="selectOption9('Slate')">Slate</div>
-                        <div class="option" onclick="selectOption9('Sandstone')">Sandstone</div>
-                        <div class="option" onclick="selectOption9('Limestone')">Limestone</div>
-                        <div class="option" onclick="selectOption9('Ceramic')">Ceramic</div>
-                        <div class="option" onclick="selectOption9('Porcelain')">Porcelain</div>
-                        <div class="option" onclick="selectOption9('Bonechina')">Bonechina</div>
-
-                    </div>
-
-                </div>
+            <div class="dro" id="abc5">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers6" name="myBrowser" class="abhi" id="material-6" placeholder="Material_Type"/></label><button onclick="c6()" class="another">Copy</button>
+                <datalist id="browsers6">
+                      <option value="Ash">
+                      <option value="Birch">
+                        <option value="Cherry">
+                            <option value="Mahogany">
+                                <option value="Oak">
+                                    <option value="Pine">
+                                        <option value="Rosewood">
+                                            <option value="Wallnut">
+                    </datalist>
+            </div>
+            <div class="dro" id="abc6">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers7" name="myBrowser" class="abhi" id="material-7" placeholder="Material_Type"/></label><button onclick="c7()" class="another">Copy</button>
+                <datalist id="browsers7">
+                      <option value="White">
+                      <option value="Jade">
+                        <option value="Blue vein">
+                            <option value="Green vein">
+                                <option value="Pink vein">
+                                    <option value="Dark">
+                
+                    </datalist>
+            </div>
+            <div class="dro" id="abc7">
+                <label class="label">Choose Material Type:<br>
+                    <input list="browsers8" name="myBrowser" class="abhi" id="material-8" placeholder="Material_Type"/></label><button onclick="c8()" class="another">Copy</button>
+                <datalist id="browsers8">
+                      <option value="Slate">
+                      <option value="Sandstone">
+                        <option value="Limestone">
+                            <option value="Ceramic">
+                                <option value="Porcelain">
+                                    <option value="Bonechina">
+                
+                    </datalist>
             </div>
             <div class="dropdown" id="lki">
-                <span class="choose">Choose Design:</span>
-                <div class="selected-option">Selected Option: &nbsp;<label id="selectedOption2" placeholder="Materials" class="select23"></label></div>
-                <div class="dropdown-content">
-                    <div class="option" onclick="selectOption2('Modern')">Modern</div>
-                    <div class="option" onclick="selectOption2('Coastal')">Coastal</div>
-                    <div class="option" onclick="selectOption2('Shabby')">Shabby</div>
-                    <div class="option" onclick="selectOption2('Retro')">Retro</div>
-                    <div class="option" onclick="selectOption2('Antique')">Antique</div>
-                    <div class="option" onclick="selectOption2('Rustic')">Rustic</div>
-                    <div class="option" onclick="selectOption2('Vintage')">Vintage</div>
-                    <div class="option" onclick="selectOption2('Mission')">Mission</div>
+                <label class="label">Choose Design:<br>
+                    <input list="browser" name="myBrowser" class="abhi" id="design" placeholder="Design"/></label><button onclick="copy2()" class="another">Copy</button>
+                <datalist id="browser">
+                      <option value="Modern">
+                      <option value="Coastal">
+                      <option value="Shabby">
+                      <option value="Retro">
+                      <option value="Antique">
+                      <option value="Rustic">
+                        <option value="Vintage">
+                            <option value="Mission">
+                    </datalist>
 
-
-                </div>
 
             </div>
+
         </div>
 
     </div>
@@ -410,155 +488,20 @@
         // myColor() function is called
         document.getElementById('colorPicker')
             .addEventListener('input', myColor);
-
-        function selectOption(option) {
-            document.getElementById("selectedOption").innerHTML = option;
-            let opt = String(option);
-
-            if (opt == 'Plastic') {
-                document.getElementById("new").style.display = "block";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "hide";
-
-
-
-            } else if (opt == 'Glass') {
-                console.log(5);
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "block";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "hide";
-
-            } else if (opt == 'Metal') {
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "block";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "hide";
-
-
-            } else if (opt == 'Rubber') {
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "block";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "hide";
-
-
-            } else if (opt == 'Fabric') {
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "block";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "hide";
-
-
-            } else if (opt == 'Wood') {
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "block";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "hide";
-
-            } else if (opt == 'Marble') {
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "block";
-                document.getElementById("new7").style.display = "hide";
-
-
-            } else if (opt == 'Stone') {
-                document.getElementById("new").style.display = "hide";
-                document.getElementById("new1").style.display = "hide";
-                document.getElementById("new2").style.display = "hide";
-                document.getElementById("new3").style.display = "hide";
-                document.getElementById("new4").style.display = "hide";
-                document.getElementById("new5").style.display = "hide";
-                document.getElementById("new6").style.display = "hide";
-                document.getElementById("new7").style.display = "block";
-
-
-            }
-        }
-
-        function selectOption1(option) {
-            document.getElementById("selectedOption1").innerHTML = option;
-
-        }
-
-
-
-        function selectOption2(option) {
-            document.getElementById("selectedOption2").innerHTML = option;
-
-        }
-
-        function selectOption3(option) {
-            document.getElementById("selectedOption3").innerHTML = option;
-
-        }
-
-        function selectOption4(option) {
-            document.getElementById("selectedOption4").innerHTML = option;
-
-        }
-
-        function selectOption5(option) {
-            document.getElementById("selectedOption5").innerHTML = option;
-
-        }
-
-        function selectOption6(option) {
-            document.getElementById("selectedOption6").innerHTML = option;
-
-        }
-
-        function selectOption7(option) {
-            document.getElementById("selectedOption7").innerHTML = option;
-
-        }
-
-        function selectOption8(option) {
-            document.getElementById("selectedOption8").innerHTML = option;
-
-        }
-
-        function selectOption9(option) {
-            document.getElementById("selectedOption9").innerHTML = option;
-
-        }
     </script>
 </body>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-storage.js"></script>
 <script type="module">
 
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js"; const firebaseConfig = { apiKey: "AIzaSyD5oPX-ScDnniWVeb28YhJQdq0RC017_iY",
-    authDomain: "hackfest-a71c4.firebaseapp.com", projectId: "hackfest-a71c4", storageBucket: "hackfest-a71c4.appspot.com", messagingSenderId: "226928990995", appId: "1:226928990995:web:645cf4645377b0f03818e6", measurementId: "G-PN39FBZ9HH" }; const app
-    = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-analytics.js"; import { GoogleAuthProvider } from "https://www.gstatic.com/firebasejs/9.19.1/firebase-auth.js";
+    const firebaseConfig = { apiKey: "AIzaSyD5oPX-ScDnniWVeb28YhJQdq0RC017_iY", authDomain: "hackfest-a71c4.firebaseapp.com", projectId: "hackfest-a71c4", storageBucket: "hackfest-a71c4.appspot.com", messagingSenderId: "226928990995", appId: "1:226928990995:web:645cf4645377b0f03818e6",
+    measurementId: "G-PN39FBZ9HH" }; const app= initializeApp(firebaseConfig); const analytics = getAnalytics(app);
 </script>
+<script src="auth2.js"></script>
+<script src="imagedata.js"></script>
 
 </html>
