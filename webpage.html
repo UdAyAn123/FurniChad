@@ -213,7 +213,7 @@
     .logout {
         color: Black;
         font-weight: bold;
-        margin-top: 680px;
+        margin-top: 80px;
         border-radius: 6px;
         border-width: 0px;
         font-size: 24px;
@@ -253,7 +253,8 @@
         color: white;
         font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
-        margin-top: 5px;
+        margin-top: 20px;
+        margin-bottom: 20px
     }
     
     .final {
@@ -335,6 +336,20 @@
     #generate {
         color: white;
     }
+    
+    .potha {
+        color: white;
+        font-family: cursive;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .heading {
+        color: white;
+        font-weight: bold;
+        font-family: cursive;
+        font-size: 28px;
+    }
 </style>
 
 <body>
@@ -343,6 +358,15 @@
         <![endif]-->
     <div class="main">
         <div class="main1">
+            <div class="heading">About Us!</div><br>
+            <div class="potha">FurniChAD is a powerful app designed to help users generate 3D models of furniture from a simple text prompt. With its advanced algorithms, FurniChAD is able to analyze the text prompt, generate the associated 2D image, and create a detailed
+                3D model, complete with Point Cloud and mesh files.</div>
+            <br>
+            <div class="potha">The app is easy to use and requires no prior knowledge of 3D modeling. Users simply input a text description of the furniture they want to create, such as "Futuristic Curvy Chair," and FurniChAD takes care of the rest. </div>
+
+            <br>
+            <div class="potha">Overall, FurniChAD is a powerful and versatile app that makes 3D modeling accessible to everyone, regardless of their experience or skill level. Whether you're an interior designer, furniture manufacturer, or just someone who wants to create
+                a custom piece for their home, FurniChAD has the tools you need to bring your vision to life.</div>
             <button class="logout" onclick="logout()">Log Out</button>
         </div>
         <div class="main2">
@@ -355,7 +379,7 @@
         </div>
         <div class="main3">
             <form>
-                <img src="th.jpeg" alt="error while loading image" class="image1" id="myimg"><input type="file" id="photo" class="fc">
+
                 <div class="info">
                     <div>Username:<input type="text" class="inputs" id="username" required></div>
                     <div>Phone No.:<input type="text" class="inputs" id="phone" required></div>
