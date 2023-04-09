@@ -82,16 +82,15 @@
     
     .choose {
         color: white;
-        
-        font-family:sans-serif;
+        font-family: sans-serif;
         font-size: 26px;
         margin-top: 20px;
+        margin-bottom: 10px;
     }
     
     .label {
         color: white;
-        font-family:sans-serif;
-      
+        font-family: 'Source Sans Pro', sans-serif;
         font-size: 26px;
         margin-top: 20px;
         cursor: pointer;
@@ -99,9 +98,8 @@
     
     .hex {
         color: white;
-        font-family:sans-serif;
+        font-family: sans-serif;
         font-size: 18px;
-        
         margin-top: 20px;
     }
     
@@ -253,19 +251,24 @@
     
     .info {
         color: white;
-        font-family:Arial, Helvetica, sans-serif;
+        font-family: Arial, Helvetica, sans-serif;
         font-size: 20px;
         margin-top: 5px;
     }
     
     .final {
-        color: white;
-        background-color: blue;
-        font-weight: bold;
-        border: 0px;
-        margin-top: 10px;
+        color: red;
+        background-color: black;
         cursor: pointer;
+        font-weight: bold;
+        border-width: 3px;
+        border-style: double;
+        border-color: red;
         font-size: 16px;
+        border-radius: 5px;
+        margin-top: 8px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     .inputs {
@@ -274,33 +277,64 @@
     }
     
     .another {
-        color: white;
-        background-color: blue;
+        color: red;
+        background-color: black;
         cursor: pointer;
         font-weight: bold;
-        border-width: 0px;
+        border-width: 3px;
+        border-style: double;
+        border-color: red;
         font-size: 16px;
-        margin-left: 5px;
+        border-radius: 5px;
+        margin-left: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
     }
     
     .abhi {
         border-radius: 6px;
         padding-left: 10px;
     }
-    .furnichad{
-        margin-top:10px;
-        border:0px;
-        height:510px;
+    
+    .furnichad {
+        margin-top: 10px;
+        border: 0px;
+        height: 510px;
         width: 670px;
-        border-radius:5px;
+        border-radius: 5px;
         box-shadow: 2px;
     }
-    #jammu{
-        margin-top:0px;
+    
+    #jammu {
+        margin-top: 0px;
     }
-   .josh{
-    color:white;
-   }
+    
+    .kyun {
+        color: red;
+        background-color: black;
+        cursor: pointer;
+        font-weight: bold;
+        border-width: 3px;
+        border-style: double;
+        border-color: red;
+        font-size: 16px;
+        border-radius: 5px;
+        margin-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    #inputs {
+        margin-top: 20px;
+    }
+    
+    #material {
+        margin-left: 68px;
+    }
+    
+    #generate {
+        color: white;
+    }
 </style>
 
 <body>
@@ -314,7 +348,7 @@
         <div class="main2">
             <img src="logo-no-background.png" alt="error while loading image" class="img">
             <hr color="grey" class="hr">
-            
+
             <div class="chatbox">
                 <iframe src="http://localhost:8502/" class="furnichad"></iframe>
             </div>
@@ -330,17 +364,49 @@
                 <button class="final" onclick="uploadImage()" type="submit">All set!</button>
             </form>
             <hr color="grey" class="line">
-            <div>
-                <div class="choose">Choose Colour: </div><input type="color" id="colorPicker" value="#6a5acd" class="code">
-                <div>
-
-                    <div class="hex">Hex Code:</div> <input type="text" id="box" class="code"></div>
-            </div>
-<div class="jammu">
             <div class="dropdown" id="lki">
-                <label class="label">Choose Material:<br>
+                <label class="label">Choose Furniture:<br>
+                <input list="browser89" name="myBrowser" class="abhi" id="furniture" placeholder="Furniture"/></label>
+                <datalist id="browser89">
+                  <option value="Chair">
+                  <option value="Table">
+                  <option value="Sofa">
+                  <option value="Bed">
+                  <option value="Drawers">
+                  <option value="Coffee table">
+                    <option value="Bench">
+                        <option value="TV Stand">
+                            <option value="Cupboards">
+                </datalist>
+
+
+            </div>
+            <div class="dropdown" id="lki">
+                <label class="label">Choose Colour:<br>
+                <input list="browser09" name="myBrowser" class="abhi" id="color" placeholder="Color"/></label>
+                <datalist id="browser09">
+                  <option value="Blue">
+                  <option value="Red">
+                  <option value="Green">
+                  <option value="Black">
+                  <option value="Grey">
+                  <option value="Pink">
+                    <option value="Brown">
+                        <option value="Violet">
+                            <option value="Seagreen">
+                                <option value="Maroon">
+                                    <option value="Silver">
+                                        <option value="Golden">
+                                    
+                </datalist>
+
+
+            </div>
+            <div class="jammu">
+                <div class="dropdown" id="lki">
+                    <label class="label">Choose Material:<br>
                     <input list="browsers" name="myBrowser" class="abhi" id="material" placeholder="Material"/></label><button onclick="copy3()" class="another">Type</button>
-                <datalist id="browsers">
+                    <datalist id="browsers">
                       <option value="Plastic">
                       <option value="Glass">
                       <option value="Metal">
@@ -352,63 +418,63 @@
                     </datalist>
 
 
-            </div>
-            <div class="dro" id="abc">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers1" name="myBrowser" class="abhi" id="material-1" placeholder="Material_Type"/></label>
-                <datalist id="browsers1">
+                    <datalist id="browsers1">
                       <option value="High gloss">
                       <option value="Low gloss">
                       <option value="Textured">
                       <option value="Translucent">
 
                     </datalist>
-            </div>
-            <div class="dro" id="abc1">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc1">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers2" name="myBrowser" class="abhi" id="material-2" placeholder="Material_Type"/></label>
-                <datalist id="browsers2">
+                    <datalist id="browsers2">
                       <option value="Glossy">
                       <option value="Vague">
                       
 
                     </datalist>
-            </div>
-            <div class="dro" id="abc2">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc2">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers3" name="myBrowser" class="abhi" id="material-3" placeholder="Material_Type"/></label>
-                <datalist id="browsers3">
+                    <datalist id="browsers3">
                       <option value="Steel">
                       <option value="Chrome">
                         <option value="Aluminium">
                             <option value="Bronze">
                                 <option value="Bras">
                     </datalist>
-            </div>
-            <div class="dro" id="abc3">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc3">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers4" name="myBrowser" class="abhi" id="material-4" placeholder="Material_Type"/></label>
-                <datalist id="browsers4">
+                    <datalist id="browsers4">
                       <option value="Matt">
                       <option value="Gloss">
                         <option value="Textured">
                             <option value="Resin">
                             
                     </datalist>
-            </div>
-            <div class="dro" id="abc4">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc4">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers5" name="myBrowser" class="abhi" id="material-5" placeholder="Material_Type"/></label>
-                <datalist id="browsers5">
+                    <datalist id="browsers5">
                       <option value="Cotton">
                       <option value="Wool">
                         <option value="Leather">
                     </datalist>
-            </div>
-            <div class="dro" id="abc5">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc5">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers6" name="myBrowser" class="abhi" id="material-6" placeholder="Material_Type"/></label>
-                <datalist id="browsers6">
+                    <datalist id="browsers6">
                       <option value="Ash">
                       <option value="Birch">
                         <option value="Cherry">
@@ -418,11 +484,11 @@
                                         <option value="Rosewood">
                                             <option value="Wallnut">
                     </datalist>
-            </div>
-            <div class="dro" id="abc6">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc6">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers7" name="myBrowser" class="abhi" id="material-7" placeholder="Material_Type"/></label>
-                <datalist id="browsers7">
+                    <datalist id="browsers7">
                       <option value="White">
                       <option value="Jade">
                         <option value="Blue vein">
@@ -431,11 +497,11 @@
                                     <option value="Dark">
                 
                     </datalist>
-            </div>
-            <div class="dro" id="abc7">
-                <label class="label">Choose Material Type:<br>
+                </div>
+                <div class="dro" id="abc7">
+                    <label class="label">Choose Material Type:<br>
                     <input list="browsers8" name="myBrowser" class="abhi" id="material-8" placeholder="Material_Type"/></label>
-                <datalist id="browsers8">
+                    <datalist id="browsers8">
                       <option value="Slate">
                       <option value="Sandstone">
                         <option value="Limestone">
@@ -444,11 +510,11 @@
                                     <option value="Bonechina">
                 
                     </datalist>
-            </div>
-            <div class="dropdown" id="lki">
-                <label class="label">Choose Design:<br>
+                </div>
+                <div class="dropdown" id="lki">
+                    <label class="label">Choose Design:<br>
                     <input list="browser" name="myBrowser" class="abhi" id="design" placeholder="Design"/></label>
-                <datalist id="browser">
+                    <datalist id="browser">
                       <option value="Modern">
                       <option value="Coastal">
                       <option value="Shabby">
@@ -460,31 +526,14 @@
                     </datalist>
 
 
+                </div>
             </div>
-        </div>
-<div id="generate" class="josh"></div><button onclick="generate()">Generate</button>
+            <div id="generate" class="josh"></div><button onclick="generate()" class="kyun" id="generatebtt">Generate</button>
         </div>
 
     </div>
 
-    <script>
-        function myColor() {
 
-            // Get the value return by color picker
-            var color = document.getElementById('colorPicker').value;
-
-            // Set the color as background
-
-
-            // Take the hex code
-            document.getElementById('box').value = color;
-        }
-
-        // When user clicks over color picker,
-        // myColor() function is called
-        document.getElementById('colorPicker')
-            .addEventListener('input', myColor);
-    </script>
 </body>
 <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/8.2.7/firebase-analytics.js"></script>
