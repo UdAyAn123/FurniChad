@@ -15,7 +15,10 @@ One of the major such problems is limited customization options:- Online furnitu
 ## **Tech Stacks:**
   - PyTorch
   - Stable Diffusion
-  * Point2E
+  * Point-E
   + HuggingFace Diffusers
-  - Flask
+  - Streamlit
   * Jupyter
+  
+  ## **Models:-**
+  <p> All the models are available through this link : https://drive.google.com/drive/u/2/folders/1B1fNnO7NTpAcVAfs9XEYwecfiFb7AKT2
