@@ -1,10 +1,10 @@
 # FurniChad
 ## ~An AI Generated Furniture Tool
-<br> FurniChAD is a powerful app designed to help users generate 3D models of furniture from a simple text prompt. With its advanced algorithms, FurniChAD is able to analyze the text prompt, generate the associated 2D image, and create a detailed 3D model, complete with Point Cloud and mesh files.
+<br> FurniChAD is a powerful website designed to help users generate 3D models of furniture from a simple text prompt. With its advanced algorithms, FurniChAD is able to analyze the text prompt, generate the associated 2D image, and create a detailed 3D model, complete with Point Cloud and mesh files.
 
-The app is easy to use and requires no prior knowledge of 3D modeling. Users simply input a text description of the furniture they want to create, such as "Futuristic Curvy Chair," and FurniChAD takes care of the rest. 
+The website is easy to use and requires no prior knowledge of 3D modeling. Users simply input a text description of the furniture they want to create, such as "Futuristic Curvy Chair," and FurniChAD takes care of the rest. 
 
-Overall, FurniChAD is a powerful and versatile app that makes 3D modeling accessible to everyone, regardless of their experience or skill level. Whether you're an interior designer, furniture manufacturer, or just someone who wants to create a custom piece for their home, FurniChAD has the tools you need to bring your vision to life.</br>
+Overall, FurniChAD is a powerful and versatile website that makes 3D modeling accessible to everyone, regardless of their experience or skill level. Whether you're an interior designer, furniture manufacturer, or just someone who wants to create a custom piece for their home, FurniChAD has the tools you need to bring your vision to life.</br>
 ## **Current Situation:**
 <p>Online furniture shopping has become increasingly popular in recent years, with many customers preferring the convenience of browsing and purchasing furniture from the comfort of their homes. However, there are still several problems associated with online furniture shopping that can make the experience less than ideal for some customers.
 
@@ -22,7 +22,7 @@ One of the major such problems is limited customization options:- Online furnitu
   - Point-E
   - HuggingFace Diffusers
   - Streamlit
-  - Firebase
+  - Firebase authentication
   
 ## **How to use?**
 <p>Clone the repository with the following command:-</p>
@@ -36,7 +36,7 @@ One of the major such problems is limited customization options:- Online furnitu
 Open the terminal in this directory and type:-
 streamlit run app.py
 
-After that, open 'webpage.html'
+After that, open 'index.html'
 
 </p>
 
