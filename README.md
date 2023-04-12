@@ -19,14 +19,27 @@ One of the major such problems is limited customization options:- Online furnitu
 ## **Tech Stacks:**
   - PyTorch
   - Stable Diffusion
-  * Point-E
-  + HuggingFace Diffusers
+  - Point-E
+  - HuggingFace Diffusers
   - Streamlit
-  * Jupyter
+  - Firebase
   
-## **Models:-**
-  <p> All the models are available through this link : https://drive.google.com/drive/u/2/folders/1B1fNnO7NTpAcVAfs9XEYwecfiFb7AKT2 </p>
-  
-  <p> pipe.pkl : Pre-Trained Stability Diffusion v2 Base Model </p>
-  <p> sampler.pkl : Pre-Trained Point-E Sampler with Base Model and Upsampler </p>
-  <p> mesh_model.pkl : Pre-Trained Model for converting the Point Cloud to mesh file(.ply file) </p>
+## **How to use?**
+<p>Clone the repository with the following command:-
+git clone https://github.com/UdAyAn123/FurniChad
+
+Install all the dependencies via:-
+pip install -r requirements.txt
+
+After cloning the repository download the models from the links provided in the models folder and copy them to the models folder.
+
+Open the terminal in this directory and type:-
+streamlit run app.py
+
+After that, open 'webpage.html'
+
+</p>
+
+## **References:-**
+  <p> Stable Diffusion v2 Base Model: https://huggingface.co/stabilityai/stable-diffusion-2-base  </p>
+  <p> Point-E Model (Image to PointCloud and PointCloud to Mesh File): https://github.com/openai/point-e </p>
