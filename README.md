@@ -25,13 +25,13 @@ One of the major such problems is limited customization options:- Online furnitu
   - Firebase
   
 ## **How to use?**
-<p>Clone the repository with the following command:-
-git clone https://github.com/UdAyAn123/FurniChad
+<p>Clone the repository with the following command:-</p>
+<p>git clone https://github.com/UdAyAn123/FurniChad</p>
 
-Install all the dependencies via:-
-pip install -r requirements.txt
+<p>Install all the dependencies via:-</p>
+<p>pip install -r requirements.txt</p>
 
-After cloning the repository download the models from the links provided in the models folder and copy them to the models folder.
+<p>After cloning the repository download the models from the links provided in the models folder and copy them to the models folder.
 
 Open the terminal in this directory and type:-
 streamlit run app.py
